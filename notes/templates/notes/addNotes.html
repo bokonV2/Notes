@@ -1,0 +1,13 @@
+{% extends "notes/base.html" %}
+{% block container %}
+<section>
+  <div class="headerBlock">
+    <input class="title" type="text" name="title" id="title" value="Заметка">
+  </div>
+  <div class="mainBlock">
+    <textarea name="message" id="message" rows="8" cols="80"></textarea>
+  </div>
+  <div class="saveBtn" onclick="createNotes()">Сохранить</div>
+
+</section>
+{% endblock %}

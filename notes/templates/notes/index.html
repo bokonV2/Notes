@@ -1,0 +1,75 @@
+{% extends "notes/base.html" %}
+{% block container %}
+    <section>
+      <div class="headerBlock">
+        <i onClick="managMenu()" class="material-icons" style="font-size:98px;">view_headline</i>
+        <div class="title">Заметки</div>
+        <i onClick="managSearch()" class="material-icons" style="font-size:98px;">search</i>
+        <i onClick="managSort()" class="material-icons" style="font-size:98px;">sort</i>
+      </div>
+
+      <div class="mainBlock">
+        <div class="sort" id="sort" style="display: none;">
+          <a href="/notes/sort/1">Новые</a>
+          <a href="/notes/sort/2">Старые</a>
+        </div>
+        <div class="search" id="search" style="display: none;">
+          <form action="/notes/search" method="post">
+            <div class="searchBox">
+              <input class="searchinput" type="text" name="field" value="">
+              <button type="submit" class="searchbutton">
+                <i class="material-icons icoRig" style="font-size:98px;">search</i>
+              </button>
+            </div>
+          </form>
+        </div>
+
+          {% for note in obj %}
+              <div class="note">
+                {% if note.pin == 1 %}
+                  <div class="icon" onclick="managMenuNote({{ note.id }})" style="background-color:{{ note.color }};border: 18px dashed; border-color:Indigo"><i class="material-icons" style="font-size:98px;">settings</i></div>
+                {% else %}
+                  <div class="icon" onclick="managMenuNote({{ note.id }})" style="background-color:{{ note.color }};border: 18px solid; border-color:{{ note.color }}"><i class="material-icons" style="font-size:98px;">settings</i></div>
+                {% endif %}
+
+                <a href="/notes/notes/{{ note.id }}">
+                  <div class="Nmessage">
+                    <div class="Ntitle">{{ note.title }}</div>
+                    <div class="Ntext">{{ note.message }}</div>
+                  </div>
+                </a>
+                <a href="/notes/notes/{{ note.id }}">
+                  <div class="date">{{ note.date }}</div>
+                </a>
+              </div>
+          {% endfor %}
+
+
+      <div class="menu" id="menu" style="display: none;">
+        <div class="menuBlock">
+          <div class="themePic">
+            <a href="/notes/style/light" id="light">Светлая тема</a>
+            <a href="/notes/style/dark" id="dark">Тёмная тема</a>
+          </div>
+          <a href="#" id="helpUse">Как пользоваться</a>
+          <div class="developer">developer:<br>Бохан Захар Андреевич</div>
+          <img src="/notes/static/image/qrinf" alt="">
+        </div>
+      </div>
+      <div class="menuNote" id="menuNote" style="display: none;">
+          <a onclick="delNote()" href="#" id="del">Удалить</a>
+          <a onclick="pinNote()" href="#" id="pin">Закрепить|Открепить</a>
+          <div class="colorPicker">
+            <div onclick="setColor('red')" class="round" style="background-color:red;"></div>
+            <div onclick="setColor('blue')" class="round" style="background-color:blue;"></div>
+            <div onclick="setColor('green')" class="round" style="background-color:green;"></div>
+            <div onclick="setColor('orange')" class="round" style="background-color:orange;"></div>
+            <div onclick="setColor('fuchsia')" class="round" style="background-color:fuchsia;"></div>
+          </div>
+      </div>
+      <div onclick="managMenu()" class="menuBG" id="menuBG" style="display: none;"></div>
+      <div onclick="managMenuNote()" class="menuBG" id="menuBG2" style="display: none;"></div>
+
+      <a href="/notes/addNote"><div class="addBtn">+</div></a>
+    </section>
+{% endblock %}

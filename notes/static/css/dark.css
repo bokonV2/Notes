@@ -1,0 +1,43 @@
+body{
+  background-color: #212121;
+}
+
+.note{
+  background-color: #424242;
+}
+.Ntext{
+  color: #9E9E9E;
+}
+.Ntitle{
+  color: white;
+}
+
+.menu{
+  background-color: #616161;
+}
+.menuNote{
+  background-color: #616161;
+}
+#del{
+  background-color: #757575;
+  color: white;
+}
+#pin{
+  background-color: #757575;
+  color: white;
+}
+.developer{
+  color: white;
+}
+#helpUse{
+  background-color: #757575;
+  color: white;
+}
+textarea{
+  background-color: #212121;
+  background-color: #212121;
+  color: white;
+}
+.searchinput{
+  color: white;
+}

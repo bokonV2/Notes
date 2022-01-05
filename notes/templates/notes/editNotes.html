@@ -1,0 +1,13 @@
+{% extends "notes/base.html" %}
+{% block container %}
+<section>
+  <div class="headerBlock">
+    <input class="title" type="text" id="title" value="{{ obj.title }}">
+  </div>
+  <div class="mainBlock">
+    <textarea id="message" rows="8" cols="80">{{ obj.message }}</textarea>
+  </div>
+  <div class="saveBtn" onclick="editNotes({{ obj.id }})">Сохранить</div>
+
+</section>
+{% endblock %}
