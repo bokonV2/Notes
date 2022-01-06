@@ -12,16 +12,16 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
-  margin: 20px 20px;
+  margin: 5px 5px;
 }
 .sort a{
   background-color: orange;
   border-radius: 30px;
-  padding: 0 30px;
-  font-size: 86px;
+  padding: 0 10px;
+  font-size: 32px;
 }
 .search{
-  margin: 20px 20px;
+  margin: 5px 5px;
 }
 .searchBox{
   display: flex;
@@ -31,7 +31,7 @@
 }
 .searchinput{
   width: 100%;
-  font-size: 86px;
+  font-size: 32px;
   text-decoration: none;
 }
 .searchbutton{
@@ -49,7 +49,7 @@
 }
 .title{
   margin-left: 20px;
-  font-size: 98px;
+  font-size: 32px;
   font-weight: bold;
 }
 
@@ -61,9 +61,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 20px 0;
-  padding: 10px 10px;
-  height: calc(160px + 10px + 10px);
+  margin: 5px 0;
+  padding: 5px 5px;
+  height: calc(60px + 10px);
 }
 .icon{
   display: flex;
@@ -71,33 +71,32 @@
   justify-content: center;
   border: 0px;
   border-radius: 100%;
-  width: 120px;
-  height: 120px;
+  width: 48px;
+  height: 48px;
 }
 .Nmessage{
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  margin-left: 20px;
-  width: 500px;
-  height: calc(160px + 10px + 10px);
+  width: 200px;
+  height: calc(60px + 10px);
 }
 .Ntitle{
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   font-weight: bold;
-  font-size: 70px;
+  font-size: 32px;
 }
 .Ntext{
-  font-size: 52px;
+  font-size: 16px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 .date{
-  font-size: 48px;
+  font-size: 12px;
   margin: 20px 0;
   color: grey;
 }
@@ -106,15 +105,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 200px;
+  font-size: 80px;
   /* font-weight: bold; */
   position: fixed;
-  bottom: 50px;
-  right: 50px;
+  bottom: 10px;
+  right: 10px;
   border-radius: 100%;
   background-color: orange;
-  width: 200px;
-  height: 200px;
+  width: 80px;
+  height: 80px;
 }
 
 /* addNote */
@@ -123,8 +122,8 @@ textarea{
   margin: 0 20px;
   margin-top: 20px;
   width: calc(100vw - 40px);
-  height: calc(100vh - 11vh);
-  font-size: 54px;
+  height: calc(100vh - 14vh);
+  font-size: 16px;
 }
 input{
   background-color: rgba(0, 0, 0, 0);
@@ -137,15 +136,15 @@ input{
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 64px;
+  font-size: 32px;
   font-weight: bold;
   position: fixed;
-  bottom: 50px;
-  right: 50px;
+  bottom: 10px;
+  right: 10px;
   border-radius: 100px;
   padding: 0 20px;
   background-color: orange;
-  height: 120px;
+  height: 48px;
 }
 
 /* menu */
@@ -156,9 +155,9 @@ input{
   justify-content: center;
   align-items: center;
   z-index: 11;
-  font-size: 84px;
+  font-size: 28px;
   text-align: center;
-  margin: 20px 20px;
+  margin: 5px 5px;
   background-color: white;
 }
 .menuBG{
@@ -172,36 +171,41 @@ input{
   z-index: 1;
 }
 .menuBlock{
-  margin: 40px 40px;
+  margin: 5px 5px;
 }
 .themePic{
+  width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
 #light{
   border: 2px solid;
-  border-radius: 50px;
-  margin-right: 20px;
+  border-radius: 10px;
   background-color: white;
+  margin: 0px 5px;
 }
 #dark{
   border: 2px solid;
-  border-radius: 50px;
+  border-radius: 10px;
   background-color: black;
   color: white;
+  margin: 0px 5px;
 }
 #helpUse{
+  margin-top: 15px;
   text-decoration: underline;
-  padding: 20px 20px;
-  /* border: 2px solid; */
-  border-radius: 50px;
+  padding: 10px 10px;
+  border-radius: 10px;
 }
 
 .developer{
-  margin-top: 50px;
-  font-size: 64px;
+  margin-top: 15px;
+  font-size: 24px;
+}
+img{
+  width: 80%;
 }
 .menuNote{
   position: fixed;
@@ -211,7 +215,7 @@ input{
   align-items: center;
   flex-direction: column;
   z-index: 11;
-  font-size: 84px;
+  font-size: 28px;
   text-align: center;
   margin: 20px 20px;
   width: calc(100% - 40px);
@@ -223,13 +227,13 @@ input{
 }
 #del{
   width: calc(100% - 40px);
-  margin: 20px 20px;
+  margin: 10px 10px;
   /* border: 2px solid; */
   border-radius: 50px;
 }
 #pin{
   width: calc(100% - 40px);
-  margin: 20px 20px;
+  margin: 10px 10px;
   /* border: 2px solid; */
   border-radius: 50px;
 }
@@ -239,8 +243,18 @@ input{
   justify-content: center;
 }
 .round{
-  margin: 30px 30px;
-  width: 200px;
-  height: 200px;
+  margin: 10px 10px;
+  width: 64px;
+  height: 64px;
   border-radius: 100%;
+}
+#lines{
+  border: 2px solid black;
+  border-radius: 50px;
+  padding: 10px 10px;
+}
+#grid{
+  border: 2px solid black;
+  border-radius: 50px;
+  padding: 10px 10px;
 }

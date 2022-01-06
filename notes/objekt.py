@@ -18,6 +18,7 @@ class Notes(BaseModel):
 
 class Config(BaseModel):
     style = TextField()
+    vueSt = TextField()
 
 if __name__ == '__main__':
     # Notes.create_table()

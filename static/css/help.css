@@ -1,0 +1,20 @@
+.header{
+  height: 5vh;
+}
+#carouselExampleDark{
+  height: 90vh;
+}
+h1{
+  color: #000;
+  text-align: center;
+}
+a{
+  text-decoration: none !important;
+  color: #000 !important;
+}
+img{
+  height: 90vh;
+}
+.blacBG{
+  background-color: rgba(255, 255, 255, 1);
+}

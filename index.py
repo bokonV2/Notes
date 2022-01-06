@@ -9,5 +9,9 @@ app.register_blueprint(notes, url_prefix='/notes')
 def index():
     return redirect('/notes/')
 
+@app.route('/help')
+def help():
+    return render_template('help.html')
+
 if __name__ == '__main__':
     app.run(host='localhost', port=8000, debug=True)

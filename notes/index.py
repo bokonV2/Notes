@@ -7,14 +7,21 @@ notes = Blueprint('notes', __name__, template_folder='templates', static_folder=
 def index():
     obj = Notes.select().order_by(Notes.pin.desc())
     try:
-        return render_template('notes/index.html', obj=obj, style=Config.select()[0].style)
+        return render_template(f'notes/{Config.select()[0].vueSt}.html', obj=obj, style=Config.select()[0].style)
     except:
-        return render_template('notes/index.html', style=Config.select()[0].style)
+        return render_template(f'notes/{Config.select()[0].vueSt}.html', style=Config.select()[0].style)
 
 @notes.route('/style/<st>')
 def style(st):
     cnf = Config.select()[0]
     cnf.style = st
+    cnf.save()
+    return redirect('/notes/')
+
+@notes.route('/vueSt/<st>')
+def vueSt(st):
+    cnf = Config.select()[0]
+    cnf.vueSt = st
     cnf.save()
     return redirect('/notes/')
 
@@ -50,7 +57,7 @@ def search():
     obj = Notes.select().where(
         Notes.title.contains(field) | Notes.message.contains(field)
         ).execute()
-    return render_template('notes/index.html', obj=obj, style=Config.select()[0].style)
+    return render_template(f'notes/{Config.select()[0].vueSt}.html', obj=obj, style=Config.select()[0].style)
 
 @notes.route('/sort/<int:id>')
 def sort(id):
@@ -58,7 +65,7 @@ def sort(id):
         obj = Notes.select().order_by(Notes.date)
     elif id == 2:
         obj = Notes.select().order_by(Notes.date.desc())
-    return render_template('notes/index.html', obj=obj, style=Config.select()[0].style)
+    return render_template(f'notes/{Config.select()[0].vueSt}.html', obj=obj, style=Config.select()[0].style)
 
 @notes.route('/addNote', methods=['POST', 'GET'])
 def addNote():
@@ -83,6 +90,15 @@ def editNote():
     obj.message = message
     obj.save()
     return "data"
+
+
+@notes.route('/grid')
+def gridVue():
+    obj = Notes.select().order_by(Notes.pin.desc())
+    try:
+        return render_template('notes/grid.html', obj=obj, style=Config.select()[0].style)
+    except:
+        return render_template('notes/grid.html', style=Config.select()[0].style)
 
 @notes.route('/notes/<int:id>')
 def getNote(id):

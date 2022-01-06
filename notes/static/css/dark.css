@@ -41,3 +41,10 @@ textarea{
 .searchinput{
   color: white;
 }
+
+#lines{
+background-color: white;
+}
+#grid{
+background-color: white;
+}

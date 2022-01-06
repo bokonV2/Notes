@@ -1,6 +1,8 @@
 {% extends "notes/base.html" %}
 {% block container %}
     <section>
+      <link rel="stylesheet" href="/notes/static/css/grid.css">
+
       <div class="headerBlock">
         <i onClick="managMenu()" class="material-icons" style="font-size:48px;">view_headline</i>
         <div class="title">Заметки</div>
@@ -24,26 +26,22 @@
           </form>
         </div>
 
-          {% for note in obj %}
-              <div class="note">
-                {% if note.pin == 1 %}
-                  <div class="icon" onclick="managMenuNote({{ note.id }})" style="background-color:{{ note.color }};border: 5px dashed; border-color:Indigo"><i class="material-icons" style="font-size:48px;">settings</i></div>
-                {% else %}
-                  <div class="icon" onclick="managMenuNote({{ note.id }})" style="background-color:{{ note.color }};border: 5px solid; border-color:{{ note.color }}"><i class="material-icons" style="font-size:48px;">settings</i></div>
-                {% endif %}
-
-                <a href="/notes/notes/{{ note.id }}">
-                  <div class="Nmessage">
-                    <div class="Ntitle">{{ note.title }}</div>
-                    <div class="Ntext">{{ note.message }}</div>
-                  </div>
-                </a>
-                <a href="/notes/notes/{{ note.id }}">
-                  <div class="date">{{ note.date }}</div>
-                </a>
+        {% for note in obj %}
+          <div class="noteGr" style="background-color:{{ note.color }}">
+            <a href="/notes/notes/{{ note.id }}">
+              <div class="NmessageGr">
+                <div class="NtitleGr">{{ note.title }}</div>
+                <div class="NtextGr">{{ note.message }}</div>
               </div>
-          {% endfor %}
-
+            </a>
+            <div class="settings">
+              <a href="/notes/notes/{{ note.id }}">
+                <div class="dateGr">{{ note.date }}</div>
+              </a>
+              <i onclick="managMenuNote({{ note.id }})" class="material-icons" style="font-size:32px;">settings</i>
+            </div>
+          </div>
+        {% endfor %}
 
       <div class="menu" id="menu" style="display: none;">
         <div class="menuBlock">
