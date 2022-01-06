@@ -1,9 +1,6 @@
 .header{
   height: 5vh;
 }
-#carouselExampleDark{
-  height: 90vh;
-}
 h1{
   color: #000;
   text-align: center;
@@ -13,7 +10,7 @@ a{
   color: #000 !important;
 }
 img{
-  height: 90vh;
+  height: 95vh;
 }
 .blacBG{
   background-color: rgba(255, 255, 255, 1);
